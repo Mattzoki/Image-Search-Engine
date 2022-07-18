@@ -1,0 +1,75 @@
+.bg {
+    /* The image used */
+    background-image: url("../../../assets/bg.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .resultCard{
+    background: rgba(0, 0, 0, 0.8); 
+    color: #f1f1f1;
+    border-radius: 25px;
+    min-width: 90%;
+    min-height: 80%;
+    margin-top: 5%;
+  }
+
+  ::ng-deep .mat-select-value{
+    color: rgb(255, 255, 255) !important
+  }
+
+  ::ng-deep .mat-select-arrow {
+    color: rgb(255, 255, 255) !important
+}
+
+  mat-option{
+    text-align: center;
+  }
+
+  mat-form-field i {
+    font-size: 16px;
+    margin-left: -25px;
+    cursor: pointer;
+  }
+
+  .count-display-style{
+    margin-top: 10px;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 3px;
+    color: #8c8c8c !important;
+    font-family: 'Helvetica';
+  }
+
+  .imageGrid{
+    height: 65vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchImage{
+    transition: transform .2s; /* Animation */
+  }
+
+  .searchImage:hover {
+    transform: scale(1.3); 
+    z-index: 5;
+  }
+
+  .noResults{
+    align-items: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center
+  }

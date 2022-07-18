@@ -1,0 +1,26 @@
+<div class="main-div">
+  
+  <p class="content" style="padding: 0;z-index: 10;">
+    <mat-toolbar style="background-color: transparent; color: #f1f1f1">
+      <button
+        mat-icon-button
+        aria-label="Home"
+        (click)="goHome();"
+      >
+        <mat-icon>home</mat-icon>
+      </button>
+      <span>Smatties</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>history</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+
+  <router-outlet></router-outlet>
+
+</div>

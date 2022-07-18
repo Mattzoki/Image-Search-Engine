@@ -1,0 +1,89 @@
+<div class="bg main-div">
+  <mat-card class="resultCard">
+    <mat-card-content>
+
+      <div class="row">
+        <form class="example-form" style="text-align: left">
+          <mat-grid-list cols="6" rowHeight="80" colspan="0" rowspan="0">
+
+            <mat-grid-tile colspan ="2">
+              <mat-form-field style="width: 85%" >
+                <span matPrefix> </span>
+                <mat-label style="color: white">Search</mat-label>
+                <input  matInput name= "search" [(ngModel)] = "searchBar" >
+              </mat-form-field>
+              <button mat-icon-button matSuffix class="material-icons icons" (click)="search($event);" ><mat-icon>search</mat-icon></button>
+            
+              </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label style="color: white">Choose category</mat-label>
+                <mat-select style="width: 100%" >
+                  <mat-option
+                    *ngFor="let category of categories"
+                    [value]="category"
+                    >{{ category }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label style="color: white">Choose order</mat-label>
+                <mat-select style="width: 100%">
+                  <mat-option *ngFor="let order of orders" [value]="order">{{
+                    order
+                  }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label style="color: white">Choose colors</mat-label>
+                <mat-select style="width: 100%" multiple>
+                  <mat-option *ngFor="let color of colors" [value]="color">{{
+                    color
+                  }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label style="color: white">Choose orientation</mat-label>
+                <mat-select style="width: 100%">
+                  <mat-option
+                    *ngFor="let orientation of orientations"
+                    [value]="orientation"
+                    >{{ orientation }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </form>
+      </div>
+
+      <ng-container *ngIf="this.pictures.length > 0">
+      <div class="count-display-style">Showing 1 - {{this.pictures.length}} of {{result?.total}} images</div>
+      <div class="row imageGrid" (scroll)="onGridScroll($event)">
+        <mat-grid-list cols="5" rowHeight="2:1" [gutterSize]="'10px'"  >
+            <mat-grid-tile *ngFor="let pic of pictures" class="searchImage">
+                <a href="{{ pic.pageURL }}" target="_blank" rel="noopener noreferrer"><mat-card >
+                    <img mat-card-image src="{{ pic.largeImageURL }}" >
+                </mat-card></a>
+            </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </ng-container>
+
+    <div *ngIf="this.pictures.length == 0" class="noResults">
+      <div><h1>There are no results available for this search</h1></div>
+    </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

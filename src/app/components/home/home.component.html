@@ -1,0 +1,22 @@
+<video autoplay muted loop id="myVideo" oncanplay="this.play()">
+  <source src="../assets/Sea.mp4" type="video/mp4" />
+  Your browser does not support HTML5 video.
+</video>
+
+<mat-card  style="background: rgba(0, 0, 0, 0.8); color: #f1f1f1;border-radius: 25px;">
+    <mat-card-header>
+        <mat-card-title><h1>What would you like to search for today?</h1></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form" style="text-align: center">
+        <mat-form-field style="width: 75%" >
+          <span matPrefix> </span>
+          <mat-label style="color: white">Search</mat-label>
+          <input  matInput name= "search" [(ngModel)] = "searchBar" >
+        </mat-form-field>
+        <button mat-icon-button matSuffix class="material-icons icons" ><mat-icon>filter_list</mat-icon></button>
+        <button mat-icon-button matSuffix class="material-icons icons" (click)="search($event);" ><mat-icon>search</mat-icon></button>
+      </form>
+      
+    </mat-card-content>
+</mat-card>

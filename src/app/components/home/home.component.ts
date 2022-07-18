@@ -27,7 +27,12 @@ export class HomeComponent implements OnInit {
     }
     
     let fullSearch = {
-      topic: this.searchBar
+      topic: this.searchBar,
+      page:1,
+      order:'',
+      colors:'',
+      category:'',
+      orientation:'',
       }
 
     this.cs.setCurrentSearch(fullSearch)

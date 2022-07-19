@@ -12,10 +12,10 @@
         <mat-form-field style="width: 75%" >
           <span matPrefix> </span>
           <mat-label style="color: white">Search</mat-label>
-          <input  matInput name= "search" [(ngModel)] = "searchBar" >
+          <input maxlength="100" (keyup)="verifyLength()" matInput name= "search" [(ngModel)] = "searchBar" >
         </mat-form-field>
-        <button mat-icon-button matSuffix class="material-icons icons" ><mat-icon>filter_list</mat-icon></button>
         <button mat-icon-button matSuffix class="material-icons icons" (click)="search($event);" ><mat-icon>search</mat-icon></button>
+        <button mat-icon-button matSuffix class="material-icons icons" ><mat-icon>filter_list</mat-icon></button>
       </form>
       
     </mat-card-content>

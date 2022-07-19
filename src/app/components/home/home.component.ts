@@ -11,7 +11,7 @@ import{MatSnackBar} from '@angular/material/snack-bar'
 })
 export class HomeComponent implements OnInit {
 
-  public searchBar 
+  public searchBar :''
 
   constructor(private cs:ConstantService,private router: Router, private snackbar : MatSnackBar) { }
 
@@ -37,6 +37,14 @@ export class HomeComponent implements OnInit {
 
     this.cs.setCurrentSearch(fullSearch)
     this.router.navigateByUrl('/search');
+    }
+
+    verifyLength(){
+      console.log(this.searchBar);
+      
+      if(this.searchBar.length == 100){
+        this.snackbar.open("Max Length of 100 characters" , 'OK', {duration:1000})
+      }
     }
 
 }

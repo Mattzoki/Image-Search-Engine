@@ -24,12 +24,12 @@ jobs:
           git config user.name  "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Make 1–7 spaced commits
+      - name: Make 0–7 spaced commits
         env:
           FILEPATH: .keepalive/$(date -u +%Y).md
         run: |
           mkdir -p .keepalive
-          commits=$(shuf -i 1-7 -n 1)
+          commits=$(shuf -i 0-7 -n 1)
           echo "Will make $commits commit(s) today."
           for i in $(seq 1 $commits); do
             echo "$(date -u +"%Y-%m-%d %H:%M:%S") — heartbeat [$i/$commits]" >> "$FILEPATH"
